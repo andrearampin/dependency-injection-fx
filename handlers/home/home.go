@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/andrearampin/dependency-injection-fx/clients"
 	"go.uber.org/fx"
 	"go.uber.org/zap"
 )
@@ -15,8 +14,6 @@ type Welcome struct {
 
 type Params struct {
 	fx.In
-
-	DB     clients.DB
 	Logger zap.Logger
 }
 

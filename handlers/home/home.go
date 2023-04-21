@@ -2,10 +2,10 @@ package home
 
 import (
 	"encoding/json"
-	"github.com/andrearampin/dependency-injection-fx/clients"
+	"net/http"
+
 	"go.uber.org/fx"
 	"go.uber.org/zap"
-	"net/http"
 )
 
 type Welcome struct {
@@ -14,9 +14,7 @@ type Welcome struct {
 
 type Params struct {
 	fx.In
-
-	DB     clients.DB
-	Logger *zap.Logger
+	Logger zap.Logger
 }
 
 func NewHandler(p Params) (http.Handler, error) {
